@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Register() {
+
+  const [name, setName] = useState("");  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,6 +24,14 @@ export default function Register() {
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
 
+        <input
+          type="text"
+          placeholder="name"
+          className="w-full mb-4 p-2 border border-gray-300 rounded"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <input
           type="email"
           placeholder="Email"
