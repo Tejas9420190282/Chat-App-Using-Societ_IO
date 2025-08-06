@@ -2,6 +2,7 @@
 
 // src/pages/Register.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <form
         onSubmit={handleRegister}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm"
@@ -46,6 +47,8 @@ export default function Register() {
           Register
         </button>
       </form>
+
+      <p className="mt-5">Already account, <Link to="/" className=" text-blue-500 hover:text-red-500">Login</Link></p>
     </div>
   );
 }

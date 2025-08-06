@@ -2,6 +2,7 @@
 
 // src/pages/Login.jsx
 import { useState } from "react";
+import {Link} from "react-router-dom"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <form
         onSubmit={handleLogin}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm"
@@ -45,7 +46,10 @@ export default function Login() {
         >
           Login
         </button>
+        
       </form>
+      <Link to="/register" className="pt-5 text-blue-500 hover:text-red-500">Create new account</Link>
+      
     </div>
   );
 }
